@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Problema de la Bauxita</title>
+</head>
+<body>
+    <h1>Problema de la Bauxita</h1>
+    <p>Ingrese los costos fijos de cada planta:</p>
+
+    <form method="POST">
+        <label>Coste fijo planta B:</label>
+        <input type="number" name="costoB">
+
+        <label>Coste fijo planta C:</label>
+        <input type="number" name="costoC">
+
+        <label>Coste fijo planta D:</label>
+        <input type="number" name="costoD">
+
+        <label>Coste fijo planta E:</label>
+        <input type="number" name="costoE">
+
+        <input type="submit" value="Ejecutar modelo">
+    </form>
+
+    {% if resultado %}
+    <hr>
+    <h3>Resultado del modelo</h3>
+    <p>{{ resultado }}</p>
+    <ul>
+        {% for planta, valor in plantas_abiertas.items() %}
+            <li>{{ planta }}: {{ valor }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
